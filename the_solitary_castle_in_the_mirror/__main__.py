@@ -1,14 +1,14 @@
 from __future__ import annotations
 
 import argparse
-from datetime import date
 import json
+from datetime import date
 
-from the_solitary_castle_in_the_mirror.core import to_character_date
 from the_solitary_castle_in_the_mirror.constants import characters
+from the_solitary_castle_in_the_mirror.core import to_character_date
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("character", nargs="+", choices=characters)
     args = parser.parse_args()
