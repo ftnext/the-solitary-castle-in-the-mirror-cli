@@ -1,0 +1,8 @@
+[project]
+name = "kojo-fan-art"
+version = "0.0.1"
+requires-python = ">=3.8"
+license = { text = "MIT License" }
+
+[project.scripts]
+kojo-day = "the_solitary_castle_in_the_mirror.__main__:main"
