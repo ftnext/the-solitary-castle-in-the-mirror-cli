@@ -3,6 +3,8 @@ from __future__ import annotations
 from abc import ABCMeta, abstractmethod
 from datetime import date
 
+from the_solitary_castle_in_the_mirror._types import CharacterName
+
 
 class CharacterDate(metaclass=ABCMeta):
     weekdays = {
@@ -73,12 +75,12 @@ class DateInUreshinoWorld(CharacterDate):
         return 2026
 
 
-_mappings = {
-    "kokoro": DateInKokoroWorld,
-    "aki": DateInAkiWorld,
-    "fuka": DateInFukaWorld,
-    "rion": DateInRionWorld,
-    "subaru": DateInSubaruWorld,
-    "masamune": DateInMasamuneWorld,
-    "ureshino": DateInUreshinoWorld,
+_mappings: dict[CharacterName, type[CharacterDate]] = {
+    CharacterName.KOKORO: DateInKokoroWorld,
+    CharacterName.AKI: DateInAkiWorld,
+    CharacterName.FUKA: DateInFukaWorld,
+    CharacterName.RION: DateInRionWorld,
+    CharacterName.SUBARU: DateInSubaruWorld,
+    CharacterName.MASAMUNE: DateInMasamuneWorld,
+    CharacterName.URESHINO: DateInUreshinoWorld,
 }
