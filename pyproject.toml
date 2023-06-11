@@ -6,3 +6,16 @@ license = { text = "MIT License" }
 
 [project.scripts]
 kojo-day = "the_solitary_castle_in_the_mirror.__main__:main"
+
+[project.optional-dependencies]
+dev = [
+    "taskipy",
+    "black",
+    "isort",
+    "autoflake",
+    "pyupgrade",
+    "pytest",
+    "pytest-randomly",
+    "flake8",
+    "mypy",
+]
