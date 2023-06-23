@@ -76,11 +76,11 @@ class DateInUreshinoWorld(CharacterDate):
 
 
 _mappings: dict[CharacterName, type[CharacterDate]] = {
-    CharacterName.KOKORO: DateInKokoroWorld,
-    CharacterName.AKI: DateInAkiWorld,
-    CharacterName.FUKA: DateInFukaWorld,
-    CharacterName.RION: DateInRionWorld,
-    CharacterName.SUBARU: DateInSubaruWorld,
-    CharacterName.MASAMUNE: DateInMasamuneWorld,
-    CharacterName.URESHINO: DateInUreshinoWorld,
+    CharacterName.kokoro: DateInKokoroWorld,
+    CharacterName.aki: DateInAkiWorld,
+    CharacterName.fuka: DateInFukaWorld,
+    CharacterName.rion: DateInRionWorld,
+    CharacterName.subaru: DateInSubaruWorld,
+    CharacterName.masamune: DateInMasamuneWorld,
+    CharacterName.ureshino: DateInUreshinoWorld,
 }
