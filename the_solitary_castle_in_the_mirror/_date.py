@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from abc import ABCMeta, abstractmethod
+from dataclasses import dataclass
 from datetime import date
 
 from the_solitary_castle_in_the_mirror._types import CharacterName
@@ -33,42 +34,49 @@ class CharacterDate(metaclass=ABCMeta):
         return self.weekdays[self._date.weekday()]
 
 
+@dataclass(init=False)
 class DateInKokoroWorld(CharacterDate):
     @staticmethod
     def the_year() -> int:
         return 2005
 
 
+@dataclass(init=False)
 class DateInRionWorld(CharacterDate):
     @staticmethod
     def the_year() -> int:
         return 2005
 
 
+@dataclass(init=False)
 class DateInSubaruWorld(CharacterDate):
     @staticmethod
     def the_year() -> int:
         return 1984
 
 
+@dataclass(init=False)
 class DateInAkiWorld(CharacterDate):
     @staticmethod
     def the_year() -> int:
         return 1991
 
 
+@dataclass(init=False)
 class DateInMasamuneWorld(CharacterDate):
     @staticmethod
     def the_year() -> int:
         return 2012
 
 
+@dataclass(init=False)
 class DateInFukaWorld(CharacterDate):
     @staticmethod
     def the_year() -> int:
         return 2019
 
 
+@dataclass(init=False)
 class DateInUreshinoWorld(CharacterDate):
     @staticmethod
     def the_year() -> int:
