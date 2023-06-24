@@ -88,12 +88,12 @@ _mappings: MappingProxyType[
     CharacterName, type[CharacterDate]
 ] = MappingProxyType(
     {
-        CharacterName.kokoro: DateInKokoroWorld,
-        CharacterName.aki: DateInAkiWorld,
-        CharacterName.fuka: DateInFukaWorld,
-        CharacterName.rion: DateInRionWorld,
-        CharacterName.subaru: DateInSubaruWorld,
-        CharacterName.masamune: DateInMasamuneWorld,
-        CharacterName.ureshino: DateInUreshinoWorld,
+        CharacterName.KOKORO: DateInKokoroWorld,
+        CharacterName.AKI: DateInAkiWorld,
+        CharacterName.FUKA: DateInFukaWorld,
+        CharacterName.RION: DateInRionWorld,
+        CharacterName.SUBARU: DateInSubaruWorld,
+        CharacterName.MASAMUNE: DateInMasamuneWorld,
+        CharacterName.URESHINO: DateInUreshinoWorld,
     }
 )
