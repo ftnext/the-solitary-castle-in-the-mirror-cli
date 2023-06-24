@@ -1,8 +1,28 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "kojo-fan-art"
-version = "0.0.1"
-requires-python = ">=3.8"
+description = "Fan art project for \"Lonely Castle in the Mirror\"(『かがみの孤城』)"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
 license = { text = "MIT License" }
+authors = [{ name = "nikkie", email = "takuyafjp+develop@gmail.com" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dynamic = ["version"]
+
+[project.urls]
+Repository = "https://github.com/ftnext/the-solitary-castle-in-the-mirror-cli"
 
 [project.scripts]
 kojo-day = "the_solitary_castle_in_the_mirror.__main__:main"
@@ -20,6 +40,12 @@ dev = [
     "flake8",
     "mypy",
 ]
+
+[tool.setuptools.packages.find]
+exclude = ["tests"]
+
+[tool.setuptools.dynamic]
+version = { attr = "the_solitary_castle_in_the_mirror.__version__" }
 
 [tool.taskipy.tasks]
 pre_test = "task format"
