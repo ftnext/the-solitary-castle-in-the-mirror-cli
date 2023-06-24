@@ -5,9 +5,12 @@ import json
 from collections.abc import Iterable
 from datetime import date
 
-from the_solitary_castle_in_the_mirror import characters
-from the_solitary_castle_in_the_mirror._types import Character, Weekday
-from the_solitary_castle_in_the_mirror.core import calculate_weekday
+from the_solitary_castle_in_the_mirror import (
+    Character,
+    Weekday,
+    calculate_weekday,
+    characters,
+)
 
 
 def _main(characters: Iterable[Character]) -> dict[Character, Weekday]:

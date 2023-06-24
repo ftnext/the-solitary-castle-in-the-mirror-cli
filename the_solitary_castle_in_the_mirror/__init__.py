@@ -1,8 +1,12 @@
 from typing import cast
 
+from the_solitary_castle_in_the_mirror._types import Weekday  # NOQA: F401
 from the_solitary_castle_in_the_mirror._types import (
     Character,
     CharacterNameEnum,
+)
+from the_solitary_castle_in_the_mirror.core import (  # NOQA: F401
+    calculate_weekday,
 )
 
 characters: list[Character] = cast(
