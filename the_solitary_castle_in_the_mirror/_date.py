@@ -4,12 +4,17 @@ from abc import ABCMeta, abstractmethod
 from dataclasses import dataclass
 from datetime import date
 from types import MappingProxyType
+from typing import cast
 
-from the_solitary_castle_in_the_mirror._types import CharacterNameEnum
+from the_solitary_castle_in_the_mirror._types import (
+    CharacterNameEnum,
+    Weekday,
+    WeekdayInt,
+)
 
 
 class CharacterDate(metaclass=ABCMeta):
-    weekdays = {
+    weekdays: dict[WeekdayInt, Weekday] = {
         0: "Monday",
         1: "Tuesday",
         2: "Wednesday",
@@ -31,8 +36,8 @@ class CharacterDate(metaclass=ABCMeta):
     def the_year() -> int:
         raise NotImplementedError
 
-    def weekday(self) -> str:
-        return self.weekdays[self._date.weekday()]
+    def weekday(self) -> Weekday:
+        return self.weekdays[cast(WeekdayInt, self._date.weekday())]
 
 
 @dataclass(init=False)

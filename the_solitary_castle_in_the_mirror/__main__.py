@@ -6,13 +6,13 @@ from collections.abc import Iterable
 from datetime import date
 
 from the_solitary_castle_in_the_mirror import characters
-from the_solitary_castle_in_the_mirror._types import Character
+from the_solitary_castle_in_the_mirror._types import Character, Weekday
 from the_solitary_castle_in_the_mirror.core import calculate_weekday
 
 
-def _main(characters: Iterable[Character]) -> dict[Character, str]:
+def _main(characters: Iterable[Character]) -> dict[Character, Weekday]:
     today = date.today()
-    days: dict[Character, str] = {}
+    days: dict[Character, Weekday] = {}
     for character in characters:
         days[character] = calculate_weekday(character, today)
     return days

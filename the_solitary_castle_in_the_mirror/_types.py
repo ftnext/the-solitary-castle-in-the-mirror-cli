@@ -6,6 +6,16 @@ from typing import Literal, cast
 Character = Literal[
     "kokoro", "aki", "fuka", "rion", "subaru", "masamune", "ureshino"
 ]
+Weekday = Literal[
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+]
+WeekdayInt = Literal[0, 1, 2, 3, 4, 5, 6]
 
 
 class CharacterNameEnum(Enum):
