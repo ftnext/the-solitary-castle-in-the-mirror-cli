@@ -3,6 +3,7 @@ from __future__ import annotations
 from abc import ABCMeta, abstractmethod
 from dataclasses import dataclass
 from datetime import date
+from types import MappingProxyType
 
 from the_solitary_castle_in_the_mirror._types import CharacterName
 
@@ -83,12 +84,16 @@ class DateInUreshinoWorld(CharacterDate):
         return 2026
 
 
-_mappings: dict[CharacterName, type[CharacterDate]] = {
-    CharacterName.kokoro: DateInKokoroWorld,
-    CharacterName.aki: DateInAkiWorld,
-    CharacterName.fuka: DateInFukaWorld,
-    CharacterName.rion: DateInRionWorld,
-    CharacterName.subaru: DateInSubaruWorld,
-    CharacterName.masamune: DateInMasamuneWorld,
-    CharacterName.ureshino: DateInUreshinoWorld,
-}
+_mappings: MappingProxyType[
+    CharacterName, type[CharacterDate]
+] = MappingProxyType(
+    {
+        CharacterName.kokoro: DateInKokoroWorld,
+        CharacterName.aki: DateInAkiWorld,
+        CharacterName.fuka: DateInFukaWorld,
+        CharacterName.rion: DateInRionWorld,
+        CharacterName.subaru: DateInSubaruWorld,
+        CharacterName.masamune: DateInMasamuneWorld,
+        CharacterName.ureshino: DateInUreshinoWorld,
+    }
+)
