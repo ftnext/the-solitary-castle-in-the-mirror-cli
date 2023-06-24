@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from datetime import date
 from types import MappingProxyType
 
-from the_solitary_castle_in_the_mirror._types import CharacterName
+from the_solitary_castle_in_the_mirror._types import CharacterNameEnum
 
 
 class CharacterDate(metaclass=ABCMeta):
@@ -85,15 +85,15 @@ class DateInUreshinoWorld(CharacterDate):
 
 
 _mappings: MappingProxyType[
-    CharacterName, type[CharacterDate]
+    CharacterNameEnum, type[CharacterDate]
 ] = MappingProxyType(
     {
-        CharacterName.KOKORO: DateInKokoroWorld,
-        CharacterName.AKI: DateInAkiWorld,
-        CharacterName.FUKA: DateInFukaWorld,
-        CharacterName.RION: DateInRionWorld,
-        CharacterName.SUBARU: DateInSubaruWorld,
-        CharacterName.MASAMUNE: DateInMasamuneWorld,
-        CharacterName.URESHINO: DateInUreshinoWorld,
+        CharacterNameEnum.KOKORO: DateInKokoroWorld,
+        CharacterNameEnum.AKI: DateInAkiWorld,
+        CharacterNameEnum.FUKA: DateInFukaWorld,
+        CharacterNameEnum.RION: DateInRionWorld,
+        CharacterNameEnum.SUBARU: DateInSubaruWorld,
+        CharacterNameEnum.MASAMUNE: DateInMasamuneWorld,
+        CharacterNameEnum.URESHINO: DateInUreshinoWorld,
     }
 )

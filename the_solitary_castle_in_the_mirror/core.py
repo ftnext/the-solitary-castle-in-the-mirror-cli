@@ -4,7 +4,10 @@ from datetime import date
 
 from the_solitary_castle_in_the_mirror._date import CharacterDate
 from the_solitary_castle_in_the_mirror._date import _mappings as mappings
-from the_solitary_castle_in_the_mirror._types import Character, CharacterName
+from the_solitary_castle_in_the_mirror._types import (
+    Character,
+    CharacterNameEnum,
+)
 
 
 def calculate_weekday(character: Character, date_: date) -> str:
@@ -13,4 +16,4 @@ def calculate_weekday(character: Character, date_: date) -> str:
 
 
 def to_character_date(date_: date, character: Character) -> CharacterDate:
-    return mappings[CharacterName.from_lower(character)].create(date_)
+    return mappings[CharacterNameEnum.from_lower(character)].create(date_)

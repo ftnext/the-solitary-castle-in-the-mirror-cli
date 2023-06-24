@@ -8,7 +8,7 @@ Character = Literal[
 ]
 
 
-class CharacterName(Enum):
+class CharacterNameEnum(Enum):
     KOKORO = auto()
     AKI = auto()
     FUKA = auto()
@@ -18,16 +18,16 @@ class CharacterName(Enum):
     URESHINO = auto()
 
     @classmethod
-    def from_lower(cls, lower: Character) -> CharacterName:
+    def from_lower(cls, lower: Character) -> CharacterNameEnum:
         """
-        >>> CharacterName.from_lower("kokoro") is CharacterName.KOKORO
+        >>> CharacterNameEnum.from_lower("kokoro") is CharacterNameEnum.KOKORO
         True
         """
         return cls[lower.upper()]
 
     def __str__(self) -> Character:
         """
-        >>> print(CharacterName.KOKORO)
+        >>> print(CharacterNameEnum.KOKORO)
         kokoro
         """
         return cast(Character, f"{self.name.lower()}")
