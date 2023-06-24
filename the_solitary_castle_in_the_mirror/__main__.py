@@ -5,7 +5,7 @@ import json
 from datetime import date
 
 from the_solitary_castle_in_the_mirror import characters
-from the_solitary_castle_in_the_mirror.core import to_character_date
+from the_solitary_castle_in_the_mirror.core import calculate_weekday
 
 
 def main() -> None:
@@ -16,8 +16,7 @@ def main() -> None:
     today = date.today()
     days: dict[str, str] = {}
     for character in args.character:
-        character_date = to_character_date(today, character)
-        days[character] = character_date.weekday()
+        days[character] = calculate_weekday(character, today)
 
     print(json.dumps(days))
 
