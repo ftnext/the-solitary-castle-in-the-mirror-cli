@@ -29,7 +29,14 @@ class CharacterDate(metaclass=ABCMeta):
 
     @classmethod
     def create(cls, date_: date) -> CharacterDate:
-        return cls(date_.replace(year=cls.the_year()))
+        return cls(date_.replace(year=cls.replace_year(date_)))
+
+    @classmethod
+    def replace_year(cls, date_: date) -> int:
+        if date_.month >= 5:
+            return cls.the_year()
+        else:
+            return cls.the_year() + 1
 
     @staticmethod
     @abstractmethod
