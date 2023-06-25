@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-import argparse
 import json
 import sys
+from argparse import ArgumentParser
 from collections.abc import Iterable
 from datetime import date
 
@@ -23,18 +23,28 @@ def _main(characters: Iterable[Character]) -> dict[Character, Weekday]:
     return days
 
 
-def main() -> None:
-    pre_parser = argparse.ArgumentParser(add_help=False)
-    pre_parser.add_argument(
+def _build_whole_options_parser() -> ArgumentParser:
+    options_parser = ArgumentParser(add_help=False)
+    options_parser.add_argument(
         "--version", "-V", action="store_true", help="show version and exit"
     )
-    pre_args, unknown = pre_parser.parse_known_args()
-    if pre_args.version:
+    return options_parser
+
+
+def _build_main_parser(*, parents: list[ArgumentParser]) -> ArgumentParser:
+    parser = ArgumentParser(parents=parents)
+    parser.add_argument("character", nargs="+", choices=characters)
+    return parser
+
+
+def main() -> None:
+    whole_options_parser = _build_whole_options_parser()
+    options, unknown = whole_options_parser.parse_known_args()
+    if options.version:
         print(__version__)
         sys.exit(0)
 
-    parser = argparse.ArgumentParser(parents=[pre_parser])
-    parser.add_argument("character", nargs="+", choices=characters)
+    parser = _build_main_parser(parents=[whole_options_parser])
     args = parser.parse_args(unknown)
 
     days = _main(args.character)
