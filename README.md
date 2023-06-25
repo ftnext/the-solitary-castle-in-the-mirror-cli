@@ -1,6 +1,6 @@
 # kojo-fan-art
 
-[日本語版 (In Japanese)](./README.ja.md)
+[日本語版 (In Japanese)](https://github.com/ftnext/the-solitary-castle-in-the-mirror-cli/blob/main/README.ja.md)
 
 This is a fan art project for "Lonely Castle in the Mirror."
 
