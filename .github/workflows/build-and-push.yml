@@ -7,6 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - id: kojo-day-version
+        run: |
+          python -m pip install kojo-fan-art
+          echo "version=$(kojo-day --version)" >> $GITHUB_OUTPUT
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login to Docker Hub
@@ -20,4 +27,4 @@ jobs:
           context: .
           file: environments/Dockerfile
           push: true
-          tags: ftnext/kojo-day:0.1.1
+          tags: ftnext/kojo-day:${{ steps.kojo-day-version.outputs.version }}
