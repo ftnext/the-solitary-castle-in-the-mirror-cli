@@ -49,7 +49,7 @@ version = { attr = "the_solitary_castle_in_the_mirror.__version__" }
 
 [tool.taskipy.tasks]
 pre_test = "task format"
-test = "pytest --doctest-modules"
+test = "pytest -v --doctest-modules"
 post_test = "task check"
 format = "task format_autoflake && task format_pyupgrade && task format_black && task format_isort"
 format_autoflake = "autoflake --in-place --remove-all-unused-imports $(find the_solitary_castle_in_the_mirror tests -name '*.py') setup.py"
